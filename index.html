@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veg Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    .header-img {
+      width: 100%;
+      height: auto;
+      max-height: 200px;
+      object-fit: cover;
+    }
+    .container {
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: green;
+    }
+    .info {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Your local image (must be in the same folder as index.html) -->
+  <img src="train.jpg" alt="Train Image" class="header-img" />
+
+  <div class="container">
+    <h2>Veg Menu</h2>
+    <div class="info"><strong>Restaurant Name :</strong> Sopan Restaurant-RR MS </div>
+    <div class="info"><strong>FSSAI:</strong> 10020912000133 </div>
+    <div class="info"><strong>Train:</strong> MS/TEN:T.NO-20665-VANDE BHARAT </div>
+    <div class="info"><strong>Menu :</strong> Masala Vadai / Keera Vadai -60 GMS</div>
+    <div class="info"><strong>Date :</strong> <span id="date">Loading...</span></div>
+    
+  </div>
+
+  <script>
+    const today = new Date();
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    document.getElementById('date').textContent = today.toLocaleDateString('en-IN', options);
+  </script>
+</body>
+
+</html>
