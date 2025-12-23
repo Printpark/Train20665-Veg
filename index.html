@@ -1,62 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Veg Menu</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #ffffff;
-      margin: 0;
-      padding: 0;
-    }
-    .header-img {
-      width: 100%;
-      height: auto;
-      max-height: 200px;
-      object-fit: cover;
-    }
-    .container {
-      margin: 20px;
-      padding: 20px;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 10px;
-    }
-    h2 {
-      text-align: center;
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: green;
-    }
-    .info {
-      font-size: 18px;
-      margin: 10px 0;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Veg Meal Slip</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 20px;
+  }
+  .card {
+    max-width: 420px;
+    margin: auto;
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  .header-img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+  .date {
+    text-align: right;
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 8px;
+  }
+  .title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  .veg-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: green;
+    border-radius: 50%;
+    margin-left: 6px;
+  }
+  .info {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .menu {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  ul {
+    padding-left: 18px;
+  }
+  .immediate {
+    text-align: center;
+    font-size: 14px;
+    margin: 12px 0;
+  }
+  .details {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+</style>
 </head>
+
 <body>
 
-  <!-- Your local image (must be in the same folder as index.html) -->
-  <img src="train.jpg" alt="Train Image" class="header-img" />
+<div class="card">
 
-  <div class="container">
-    <h2>Veg Menu</h2>
-    <div class="info"><strong>Licensee :</strong> M/S Sopan Restaurant-RR MS </div>
-    <div class="info"><strong>FSSAI Lic No.:</strong> 10020912000133 </div>
-    <div class="info"><strong>Train:</strong> MS/TEN:T.NO-20665-VANDE BHARAT </div>
-    <div class="info"><strong>Menu :</strong> Dhal Vada / Aloo Bonda -60 GMS</div>
-    <div class="info"><strong> Mfg. Date :</strong> <span id="date">Loading...</span></div>
-    <div class="info"><strong>Note :</strong> For Immediate Consumption</div>
-    
+  <img src="train.jpg" alt="Vande Bharat Express" class="header-img">
+
+  <div class="date">Date: <span id="todayDate"></span></div>
+
+  <div class="title">
+    Veg Breakfast <span class="veg-dot"></span>
   </div>
 
-  <script>
-    const today = new Date();
-    const options = { day: 'numeric', month: 'long', year: 'numeric' };
-    document.getElementById('date').textContent = today.toLocaleDateString('en-IN', options);
-  </script>
-</body>
+  <div class="info">
+    <strong>Train Name & No:</strong> Vande Bharat Express – 20666<br>
+    <strong>Category:</strong> Vegetarian
+  </div>
 
+  <div class="menu">
+    <strong>Menu:</strong>
+    <ul>
+      <li>Idly (100 gms) – 2 Nos</li>
+      <li>Pongal (100 gms)</li>
+      <li>Vada (30 gms)</li>
+      <li>Kesari (30 gms)</li>
+      <li>Sambar (150 gms)</li>
+      <li>Chutney (40 gms)</li>
+    </ul>
+  </div>
+
+  <div class="immediate">
+    <b><i>For Immediate Consumption</i></b>
+  </div>
+
+  <div class="details">
+    <strong>Preparation & Packaging Details</strong><br><br>
+
+    <strong>Name of the Unit / Kitchen:</strong> BASE KITCHEN<br>
+    <strong>Supplied from:</strong> Perumal Car Street, D.No.61,<br>
+    Meenakshipuram Junction, Tirunelveli – 627001<br><br>
+
+    <strong>Licensee:</strong> M/S. P. Sivaprasad<br>
+    <strong>FSSAI No:</strong> 12424026001058<br>
+    <strong>GST:</strong> 33AHAPP1689H1ZA
+  </div>
+
+</div>
+
+<script>
+  const today = new Date();
+  const options = { day: '2-digit', month: 'long', year: 'numeric' };
+  document.getElementById("todayDate").innerText =
+    today.toLocaleDateString('en-GB', options);
+</script>
+
+</body>
 </html>
